@@ -1,0 +1,177 @@
+/* --- VARIABLES Y MODO CLARO/OSCURO --- */
+:root {
+    --bg-primary: #ffffff;
+    --text-primary: #1a1a1a;
+    --accent: #e74c3c;
+    --card-bg: #f4f4f4;
+    --font-header: 'Impact', sans-serif;
+    /* Fuente 1 */
+    --font-body: 'Arial', sans-serif;
+    /* Fuente 2 */
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #121212;
+        --text-primary: #e0e0e0;
+        --accent: #ff6b6b;
+        --card-bg: #1e1e1e;
+    }
+}
+
+/* --- ESTILOS BASE --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- TRANSICIONES (Requisito: 3 distintas) --- */
+a {
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent);
+    transform: scale(1.1);
+}
+
+.btn-anim {
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- ANIMACIONES (Requisito: 3 distintas, una 3D) --- */
+
+/* 1. Animación 3D (Efecto de profundidad en título) */
+@keyframes title3D {
+    0% {
+        transform: translateZ(0) rotateX(0deg);
+    }
+
+    50% {
+        transform: translateZ(50px) rotateX(20deg);
+    }
+
+    100% {
+        transform: translateZ(0) rotateX(0deg);
+    }
+}
+
+.titulo-3d {
+    font-family: var(--font-header);
+    font-size: 5rem;
+    text-align: center;
+    perspective: 1000px;
+    animation: title3D 4s infinite ease-in-out;
+    color: var(--accent);
+}
+
+/* 2. Animación de la Rueda (Rotación) */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.anim-rueda {
+    width: 50px;
+    animation: spin 2s linear infinite;
+}
+
+/* 3. Animación de Entrada (Fade In) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* --- ANIMACIONES AVANZADAS (Scroll y View) --- */
+
+/* Basada en Scroll: La cabecera se achica al bajar */
+.header-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg-primary);
+    animation: shrink-nav linear both;
+    animation-timeline: scroll();
+    animation-range: 0 200px;
+}
+
+@keyframes shrink-nav {
+    to {
+        padding: 0.5rem;
+        border-bottom: 2px solid var(--accent);
+    }
+}
+
+/* Basada en Vista: Las tarjetas aparecen al entrar en el viewport */
+.reveal {
+    view-timeline-name: --revealing-image;
+    view-timeline-axis: block;
+    animation: linear reveal-anim both;
+    animation-timeline: --revealing-image;
+    animation-range: entry 25% cover 50%;
+}
+
+@keyframes reveal-anim {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* --- FORMULARIO CENTRADO --- */
+.form-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skate-form {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 500px;
+}
+
+/* --- RESPONSIVE --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+@media (max-width: 600px) {
+    .titulo-3d {
+        font-size: 2.5rem;
+    }
+
+    .hero img {
+        height: 300px;
+        object-fit: cover;
+    }
+}
