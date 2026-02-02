@@ -4,70 +4,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skate Culture</title>
+    <title>Skate Flow | Proyecto DIW</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 
 <body>
+    <input type="checkbox" id="theme-switch" class="theme-checkbox">
 
     <header class="header-nav">
         <nav>
             <div class="logo">
-                <img src="assets/logo.svg" alt="Logo Skate">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="Skate Flow" class="logo-img">
+                </a>
             </div>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#galeria">Galería</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+
+            <div class="nav-controls">
+                <label for="theme-switch" class="theme-label" title="Cambiar Tema">
+                    <svg viewBox="0 0 24 24" class="icon-sun-moon">
+                        <path d="M12 2v2m0 16v2m10-10h-2M4 10H2" stroke="currentColor" stroke-width="2" fill="none" />
+                    </svg>
+                </label>
+
+                <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+                <label for="menu-toggle" class="menu-icon">
+                    <span></span><span></span><span></span>
+                </label>
+
+                <ul class="nav-links">
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
     <main>
         <section id="inicio" class="hero">
             <h1 class="titulo-3d">SKATE FLOW</h1>
+            <div class="hero-content">
+                <p class="hero-intro">
+                    <strong>Skate Flow</strong> nace como un espacio digital dedicado a la cultura del asfalto, donde la
+                    técnica y la libertad creativa se encuentran en cada truco. Esta plataforma no solo explora la
+                    esencia del skateboarding, sino que la transforma en una experiencia visual interactiva a través de
+                    animaciones fluidas y un diseño adaptable que respeta el ritmo dinámico de la calle.
+                </p>
+            </div>
+
             <picture class="responsive-hero">
                 <source srcset="assets/fondo-hero-large.webp" media="(min-width: 1024px)">
-                <img src="assets/fondo-hero.webp" alt="Skatepark">
+                <img src="assets/fondo-hero.webp" alt="Skatepark Urbano" class="hero-img">
             </picture>
+
             <div class="scroll-indicator">
-                <img src="assets/rueda.svg" alt="Rueda" class="anim-rueda">
+                <svg viewBox="0 0 100 100" class="anim-rueda">
+                    <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="8" fill="none"
+                        stroke-dasharray="20 10" />
+                </svg>
+            </div>
+        </section>
+
+        <section id="cultura" class="info-extra reveal">
+            <div class="mision-vision">
+                <article class="mision">
+                    <h3>Nuestra Misión</h3>
+                    <p>Democratizar el acceso a la cultura urbana ofreciendo recursos, inspiración y tecnología para que
+                        cada skater encuentre su propio "flow" sobre la tabla.</p>
+                </article>
+                <article class="vision">
+                    <h3>Nuestra Visión</h3>
+                    <p>Convertirnos en el referente digital de la comunidad, documentando la evolución del estilo
+                        callejero a nivel global.</p>
+                </article>
             </div>
         </section>
 
         <section id="galeria" class="grid-container">
             <article class="card reveal">
-                <img src="assets/skater-transparente.png" alt="Truco 1">
+                <img src="assets/skater-transparente.png" alt="Ollie" class="img-transp">
                 <h3>Ollie Master</h3>
             </article>
             <article class="card reveal">
-                <img src="assets/detalle.avif" alt="Detalle tabla">
+                <img src="assets/detalle.avif" alt="Tabla">
                 <h3>Hardware Pro</h3>
             </article>
             <article class="card reveal">
-                <img src="assets/tabla.svg" alt="Icono Tabla">
+                <div class="icon-container">
+                    <div class="board-placeholder"></div>
+                </div>
                 <h3>Estilo Urbano</h3>
             </article>
+        </section>
+
+        <section class="faq-section reveal">
+            <div class="faq-container">
+                <h2>Preguntas Frecuentes</h2>
+                <details>
+                    <summary>¿Qué necesito para empezar?</summary>
+                    <p>Solo una tabla, ganas de aprender y mucha constancia. El asfalto hará el resto.</p>
+                </details>
+                <details>
+                    <summary>¿Cómo elijo mi primera tabla?</summary>
+                    <p>Depende de tu estilo. Recomendamos empezar con una tabla estándar de 8.0".</p>
+                </details>
+            </div>
         </section>
 
         <section id="contacto" class="form-section">
             <form class="skate-form">
                 <h2>ÚNETE AL CLUB</h2>
-                <div class="field">
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu apodo" required>
-                </div>
-                <div class="field">
-                    <input type="email" id="email" name="email" placeholder="Email" required>
-                </div>
+                <input type="text" placeholder="Tu apodo" required>
+                <input type="email" placeholder="Email" required>
                 <button type="submit" class="btn-anim">ENVIAR</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>2026 | FiksaKoud &copy; | Todos los derechos reservados</p>
+        <p>2026 | FiksaKoud &copy; | Proyecto DIW Tema 4</p>
     </footer>
-
 </body>
 
 </html>
