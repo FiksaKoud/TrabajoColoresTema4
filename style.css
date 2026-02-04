@@ -1,7 +1,5 @@
 /* --- CONFIGURACIÓN Y VIEW TRANSITIONS (Tema 4) --- */
-@view-transition {
-    navigation: auto;
-}
+/* @view-transition eliminado por conflicto con menú móvil sin JS */
 
 :root {
     --bg: #ffffff;
@@ -73,7 +71,7 @@ body {
     view-timeline-name: --item;
     animation: reveal-item linear both;
     animation-timeline: --item;
-    animation-range: entry 20% cover 40%;
+    animation-range: entry 10% entry 80%;
 }
 
 @keyframes reveal-item {
