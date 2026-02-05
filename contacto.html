@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="assets/logo.PNG">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <!-- View Transition -->
+    <meta name="view-transition" content="same-origin">
 </head>
 
 <body>
@@ -16,7 +18,7 @@
         <nav>
             <div class="logo">
                 <a href="index.html">
-                    <img src="assets/logo.PNG" alt="Skate Flow" class="logo-img">
+                    <img src="assets/logo.png" alt="Skate Flow" class="logo-img">
                 </a>
             </div>
 
@@ -43,7 +45,7 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1 class="titulo-3d">CONTACTO</h1>
+                <h1 class="title-3d">CONTACTO</h1>
                 <p class="hero-intro">¿Quieres unirte a la comunidad? ¡Contáctanos!</p>
             </div>
 
@@ -59,13 +61,19 @@
                     <input type="text" placeholder="Tu apodo" required>
                     <input type="email" placeholder="Email" required>
                     <!-- BUTTON: Botón de envío. 'type=submit' envía el formulario. -->
-                    <button type="submit" class="btn-anim">ENVIAR</button>
+                    <button type="submit" class="anim-btn">ENVIAR</button>
                 </form>
             </section>
     </main>
 
     <footer>
         <p>2026 | FiksaKoud &copy; | Proyecto DIW Tema 4</p>
+        <!-- 3er Icono SVG Requerido -->
+        <svg viewBox="0 0 24 24" class="svg-icon" style="width:24px; vertical-align:middle; margin-left:10px;">
+            <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                fill="currentColor" />
+        </svg>
     </footer>
 </body>
 

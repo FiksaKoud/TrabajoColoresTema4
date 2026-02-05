@@ -117,7 +117,7 @@ body {
     text-align: center;
 }
 
-.titulo-3d {
+.title-3d {
     font-family: var(--font-h);
     /* clamp(): Tamaño de fuente adaptable (mínimo, preferido, máximo) */
     font-size: clamp(3rem, 10vw, 6rem);
@@ -156,7 +156,7 @@ body {
     }
 }
 
-.anim-rueda {
+.wheel-anim {
     width: 60px;
     height: 60px;
     color: var(--accent);
@@ -170,20 +170,21 @@ body {
 }
 
 /* --- SECCIÓN CULTURA (Misión/Visión) --- */
-.info-extra {
+/* --- SECCIÓN CULTURA (Misión/Visión) --- */
+.extra-info {
     padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.mision-vision {
+.mission-vision {
     display: grid;
     /* Grid responsive automático: crea tantas columnas como quepan de mínimo 300px */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-.mision,
+.mission,
 .vision {
     background: var(--card);
     padding: 2.5rem;
@@ -192,12 +193,12 @@ body {
     transition: transform 0.3s ease;
 }
 
-.mision:hover,
+.mission:hover,
 .vision:hover {
     transform: translateY(-10px);
 }
 
-.mision h3,
+.mission h3,
 .vision h3 {
     margin-bottom: 1rem;
     color: var(--accent);
@@ -344,7 +345,7 @@ nav {
     width: 100%;
 }
 
-.btn-anim {
+.anim-btn {
     background: var(--accent);
     color: white;
     padding: 15px;
@@ -355,7 +356,7 @@ nav {
     transition: filter 0.3s;
 }
 
-.btn-anim:hover {
+.anim-btn:hover {
     filter: brightness(1.2);
 }
 

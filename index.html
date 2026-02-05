@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Favicon: El icono que aparece en la pestaña del navegador -->
-    <link rel="icon" type="image/png" href="assets/logo.PNG">
+    <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 
 <body>
@@ -38,7 +38,7 @@
         <nav>
             <div class="logo">
                 <a href="index.html">
-                    <img src="assets/logo.PNG" alt="Skate Flow" class="logo-img">
+                    <img src="assets/logo.png" alt="Skate Flow" class="logo-img">
                 </a>
             </div>
 
@@ -66,8 +66,9 @@
          Ayuda a los lectores de pantalla a ir directamente al contenido importante. -->
     <main>
         <!-- SECTION: Agrupa contenido temático. Generalmente tiene un encabezado. -->
+        <!-- SECTION: Agrupa contenido temático. Generalmente tiene un encabezado. -->
         <section id="inicio" class="hero">
-            <h1 class="titulo-3d">SKATE FLOW</h1>
+            <h1 class="title-3d">SKATE FLOW</h1>
             <div class="hero-content">
                 <p class="hero-intro">
                     <strong>Skate Flow</strong> nace como un espacio digital dedicado a la cultura del asfalto, donde la
@@ -79,24 +80,33 @@
 
             <!-- PICTURE: Elemento para "Art Direction" o formatos modernos.
                  Aquí lo usamos simplemente como contenedor semántico para la imagen principal. -->
+            <!-- PICTURE: Elemento para "Art Direction" o formatos modernos (AVIF/WebP).
+                 Se muestran distintas imágenes según el dispositivo o soporte del navegador. -->
             <picture class="responsive-hero">
-                <img src="assets/fondo.PNG" alt="Skatepark Urbano" class="hero-img">
+                <!-- 1. Prioridad: AVIF (Mejor compresión) -->
+                <source srcset="assets/fondo.avif" type="image/avif">
+                <!-- 2. Alternativa: WebP (Muy compatible y ligero) -->
+                <source srcset="assets/fondo.webp" type="image/webp">
+                <!-- 3. Versión Móvil (Diferente recorte/tamaño) -->
+                <source media="(max-width: 768px)" srcset="assets/fondo-mobile.webp">
+                <!-- 4. Fallback: PNG (Imagen por defecto) -->
+                <img src="assets/fondo.png" alt="Skatepark Urbano" class="hero-img">
             </picture>
 
             <div class="scroll-indicator">
                 <!-- SVG Inline: Gráficos vectoriales escalables directamente en el HTML.
-                     Permite animar sus partes (como el círculo 'anim-rueda') con CSS. -->
-                <svg viewBox="0 0 100 100" class="anim-rueda">
+                     Permite animar sus partes (como el círculo 'wheel-anim') con CSS. -->
+                <svg viewBox="0 0 100 100" class="wheel-anim">
                     <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="8" fill="none"
                         stroke-dasharray="20 10" />
                 </svg>
             </div>
         </section>
 
-        <section id="cultura" class="info-extra reveal">
-            <div class="mision-vision">
+        <section id="cultura" class="extra-info reveal">
+            <div class="mission-vision">
                 <!-- ARTICLE: Contenido independiente y autónomo (podría distribuirse por sí solo). -->
-                <article class="mision">
+                <article class="mission">
                     <h3>Nuestra Misión</h3>
                     <p>Democratizar el acceso a la cultura urbana ofreciendo recursos, inspiración y tecnología para que
                         cada skater encuentre su propio "flow" sobre la tabla.</p>
