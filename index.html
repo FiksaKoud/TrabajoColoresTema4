@@ -27,13 +27,13 @@
     <!-- 
         HACK DE CSS PARA MODO OSCURO (Checkbox Hack):
         Usamos un checkbox oculto para controlar el estado del tema.
-        En CSS usaremos 'body:has(.theme-checkbox:checked)' para cambiar las variables de colores.
+        En CSS usaremos 'body:has(.tema-checkbox:checked)' para cambiar las variables de colores.
         Este input debe estar al principio del body para poder afectar a los hermanos siguientes si no usáramos :has().
     -->
-    <input type="checkbox" id="theme-switch" class="theme-checkbox">
+    <input type="checkbox" id="theme-switch" class="tema-checkbox">
 
     <!-- HEADER: Elemento semántico para la cabecera del sitio o sección -->
-    <header class="header-nav">
+    <header class="cabecera-nav">
         <!-- NAV: Elemento semántico para los enlaces de navegación principales -->
         <nav>
             <div class="logo">
@@ -42,19 +42,19 @@
                 </a>
             </div>
 
-            <div class="nav-controls">
-                <label for="theme-switch" class="theme-label" title="Cambiar Tema">
-                    <svg viewBox="0 0 24 24" class="icon-sun-moon">
+            <div class="nav-controles">
+                <label for="theme-switch" class="tema-etiqueta" title="Cambiar Tema">
+                    <svg viewBox="0 0 24 24" class="icono-sol-luna">
                         <path d="M12 2v2m0 16v2m10-10h-2M4 10H2" stroke="currentColor" stroke-width="2" fill="none" />
                     </svg>
                 </label>
 
                 <input type="checkbox" id="menu-toggle" class="menu-checkbox" autocomplete="off">
-                <label for="menu-toggle" class="menu-icon">
+                <label for="menu-toggle" class="menu-icono">
                     <span></span><span></span><span></span>
                 </label>
 
-                <ul class="nav-links">
+                <ul class="nav-enlaces">
                     <li><a href="galeria.html">Galería</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
@@ -67,10 +67,10 @@
     <main>
         <!-- SECTION: Agrupa contenido temático. Generalmente tiene un encabezado. -->
         <!-- SECTION: Agrupa contenido temático. Generalmente tiene un encabezado. -->
-        <section id="inicio" class="hero">
-            <h1 class="title-3d">SKATE FLOW</h1>
-            <div class="hero-content">
-                <p class="hero-intro">
+        <section id="inicio" class="portada">
+            <h1 class="titulo-3d">SKATE FLOW</h1>
+            <div class="portada-contenido">
+                <p class="portada-intro">
                     <strong>Skate Flow</strong> nace como un espacio digital dedicado a la cultura del asfalto, donde la
                     técnica y la libertad creativa se encuentran en cada truco. Esta plataforma no solo explora la
                     esencia del skateboarding, sino que la transforma en una experiencia visual interactiva a través de
@@ -78,35 +78,22 @@
                 </p>
             </div>
 
-            <!-- PICTURE: Elemento para "Art Direction" o formatos modernos.
-                 Aquí lo usamos simplemente como contenedor semántico para la imagen principal. -->
-            <!-- PICTURE: Elemento para "Art Direction" o formatos modernos (AVIF/WebP).
-                 Se muestran distintas imágenes según el dispositivo o soporte del navegador. -->
-            <picture class="responsive-hero">
-                <!-- 1. Prioridad: AVIF (Mejor compresión) -->
-                <source srcset="assets/fondo.avif" type="image/avif">
-                <!-- 2. Alternativa: WebP (Muy compatible y ligero) -->
-                <source srcset="assets/fondo.webp" type="image/webp">
-                <!-- 3. Versión Móvil (Diferente recorte/tamaño) -->
-                <source media="(max-width: 768px)" srcset="assets/fondo-mobile.webp">
-                <!-- 4. Fallback: PNG (Imagen por defecto) -->
-                <img src="assets/fondo.png" alt="Skatepark Urbano" class="hero-img">
-            </picture>
+            <img src="assets/fondo.PNG" alt="Skatepark Urbano" class="portada-img">
 
-            <div class="scroll-indicator">
+            <div class="indicador-scroll">
                 <!-- SVG Inline: Gráficos vectoriales escalables directamente en el HTML.
-                     Permite animar sus partes (como el círculo 'wheel-anim') con CSS. -->
-                <svg viewBox="0 0 100 100" class="wheel-anim">
+                     Permite animar sus partes (como el círculo 'rueda-anim') con CSS. -->
+                <svg viewBox="0 0 100 100" class="rueda-anim">
                     <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="8" fill="none"
                         stroke-dasharray="20 10" />
                 </svg>
             </div>
         </section>
 
-        <section id="cultura" class="extra-info reveal">
-            <div class="mission-vision">
+        <section id="cultura" class="info-extra revelar">
+            <div class="mision-vision">
                 <!-- ARTICLE: Contenido independiente y autónomo (podría distribuirse por sí solo). -->
-                <article class="mission">
+                <article class="mision">
                     <h3>Nuestra Misión</h3>
                     <p>Democratizar el acceso a la cultura urbana ofreciendo recursos, inspiración y tecnología para que
                         cada skater encuentre su propio "flow" sobre la tabla.</p>
@@ -119,8 +106,8 @@
             </div>
         </section>
 
-        <section class="faq-section reveal">
-            <div class="faq-container">
+        <section class="seccion-faq revelar">
+            <div class="contenedor-faq">
                 <h2>Preguntas Frecuentes</h2>
                 <!-- DETAILS y SUMMARY: Elementos nativos de HTML para crear acordeones desplegables
                      sin necesidad de JavaScript. -->

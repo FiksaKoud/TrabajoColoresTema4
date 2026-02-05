@@ -12,9 +12,9 @@
 </head>
 
 <body>
-    <input type="checkbox" id="theme-switch" class="theme-checkbox">
+    <input type="checkbox" id="theme-switch" class="tema-checkbox">
 
-    <header class="header-nav">
+    <header class="cabecera-nav">
         <nav>
             <div class="logo">
                 <a href="index.html">
@@ -22,19 +22,19 @@
                 </a>
             </div>
 
-            <div class="nav-controls">
-                <label for="theme-switch" class="theme-label" title="Cambiar Tema">
-                    <svg viewBox="0 0 24 24" class="icon-sun-moon">
+            <div class="nav-controles">
+                <label for="theme-switch" class="tema-etiqueta" title="Cambiar Tema">
+                    <svg viewBox="0 0 24 24" class="icono-sol-luna">
                         <path d="M12 2v2m0 16v2m10-10h-2M4 10H2" stroke="currentColor" stroke-width="2" fill="none" />
                     </svg>
                 </label>
 
                 <input type="checkbox" id="menu-toggle" class="menu-checkbox" autocomplete="off">
-                <label for="menu-toggle" class="menu-icon">
+                <label for="menu-toggle" class="menu-icono">
                     <span></span><span></span><span></span>
                 </label>
 
-                <ul class="nav-links">
+                <ul class="nav-enlaces">
                     <li><a href="galeria.html">Galería</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
@@ -43,36 +43,36 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
+        <section class="portada">
+            <div class="portada-contenido">
                 <h1 class="titulo-3d">GALERÍA</h1>
-                <p class="hero-intro">Un vistazo a la cultura del skate.</p>
+                <p class="portada-intro">Un vistazo a la cultura del skate.</p>
             </div>
 
             <!-- GRID CONTAINER: Contenedor principal para la galería.
                  Usa CSS Grid para organizar las tarjetas automáticamente en filas y columnas. -->
-            <section id="galeria" class="grid-container">
-                <!-- ARTICLE CARD: Cada ítem de la galería es independiente.
-                     La clase 'reveal' activa la animación de entrada al hacer scroll. -->
-                <article class="card reveal">
+            <section id="galeria" class="contenedor-grid">
+                <!-- ARTÍCULO TARJETA: Cada ítem de la galería es independiente.
+                     La clase 'revelar' activa la animación de entrada al hacer scroll. -->
+                <article class="tarjeta revelar">
                     <!-- IMAGEN CON ALT: El atributo 'alt' es crucial para accesibilidad y SEO.
                          Describe la imagen si no carga o para lectores de pantalla. -->
-                    <img src="assets/olliemaster.webp" alt="Ollie" class="transp-img">
+                    <img src="assets/olliemaster.webp" alt="Ollie" class="img-transp">
                     <h3>Ollie Master</h3>
                     <h4>El salto fundamental que desafía la gravedad.</h4>
                 </article>
-                <article class="card reveal">
+                <article class="tarjeta revelar">
                     <img src="assets/boardslide.webp" alt="Tabla">
                     <h3>Boardslide</h3>
                     <h4>Deslizando la tabla sobre el riel con equilibrio.</h4>
                 </article>
-                <article class="card reveal">
+                <article class="tarjeta revelar">
                     <img src="assets/inwardheelflip.webp" alt="Tabla">
                     <h3>Inward Heelflip</h3>
                     <h4>Rotación compleja y estilo puro en el aire.</h4>
                 </article>
             </section>
-            <div class="scroll-indicator">
+            <div class="indicador-scroll">
                 <span></span>
             </div>
         </section>

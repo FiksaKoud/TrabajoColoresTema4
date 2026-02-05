@@ -12,9 +12,9 @@
 </head>
 
 <body>
-    <input type="checkbox" id="theme-switch" class="theme-checkbox">
+    <input type="checkbox" id="theme-switch" class="tema-checkbox">
 
-    <header class="header-nav">
+    <header class="cabecera-nav">
         <nav>
             <div class="logo">
                 <a href="index.html">
@@ -22,19 +22,19 @@
                 </a>
             </div>
 
-            <div class="nav-controls">
-                <label for="theme-switch" class="theme-label" title="Cambiar Tema">
-                    <svg viewBox="0 0 24 24" class="icon-sun-moon">
+            <div class="nav-controles">
+                <label for="theme-switch" class="tema-etiqueta" title="Cambiar Tema">
+                    <svg viewBox="0 0 24 24" class="icono-sol-luna">
                         <path d="M12 2v2m0 16v2m10-10h-2M4 10H2" stroke="currentColor" stroke-width="2" fill="none" />
                     </svg>
                 </label>
 
                 <input type="checkbox" id="menu-toggle" class="menu-checkbox" autocomplete="off">
-                <label for="menu-toggle" class="menu-icon">
+                <label for="menu-toggle" class="menu-icono">
                     <span></span><span></span><span></span>
                 </label>
 
-                <ul class="nav-links">
+                <ul class="nav-enlaces">
                     <li><a href="galeria.html">Galería</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
@@ -43,16 +43,16 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="title-3d">CONTACTO</h1>
-                <p class="hero-intro">¿Quieres unirte a la comunidad? ¡Contáctanos!</p>
+        <section class="portada">
+            <div class="portada-contenido">
+                <h1 class="titulo-3d">CONTACTO</h1>
+                <p class="portada-intro">¿Quieres unirte a la comunidad? ¡Contáctanos!</p>
             </div>
 
-            <section id="contacto" class="form-section">
+            <section id="contacto" class="seccion-formulario">
                 <!-- FORM: Elemento para recoger datos del usuario. 
                      En un proyecto real, necesitaría 'action' y 'method' para enviar los datos. -->
-                <form class="skate-form">
+                <form class="formulario-skate">
                     <h2>ÚNETE AL CLUB</h2>
                     <!-- INPUT: Campos de entrada de datos.
                          'type' define qué datos se esperan (texto, email, password, etc.).
@@ -61,19 +61,13 @@
                     <input type="text" placeholder="Tu apodo" required>
                     <input type="email" placeholder="Email" required>
                     <!-- BUTTON: Botón de envío. 'type=submit' envía el formulario. -->
-                    <button type="submit" class="anim-btn">ENVIAR</button>
+                    <button type="submit" class="btn-anim">ENVIAR</button>
                 </form>
             </section>
     </main>
 
     <footer>
         <p>2026 | FiksaKoud &copy; | Proyecto DIW Tema 4</p>
-        <!-- 3er Icono SVG Requerido -->
-        <svg viewBox="0 0 24 24" class="svg-icon" style="width:24px; vertical-align:middle; margin-left:10px;">
-            <path
-                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
-                fill="currentColor" />
-        </svg>
     </footer>
 </body>
 
