@@ -1,7 +1,9 @@
-/* --- CONFIGURACIÓN Y VIEW TRANSITIONS (Tema 4) --- */
-/* @view-transition eliminado por conflicto con menú móvil sin JS */
-
 :root {
+    /* 
+       VARIABLES CSS (Custom Properties):
+       Permiten definir valores reutilizables en todo el documento.
+       Si cambiamos un color aquí, se actualiza en toda la web.
+    */
     --bg: #ffffff;
     --text: #1a1a1a;
     --accent: #e74c3c;
@@ -14,6 +16,12 @@
 }
 
 /* Lógica de Tema Manual (Checkbox Hack con :has) */
+/* 
+   PSEUDO-CLASE :has():
+   Permite seleccionar el elemento padre (body) si contiene un elemento específico (.theme-checkbox:checked).
+   Es como un "selector de padre", algo que antes no existía en CSS.
+   Aquí redefinimos las variables para el modo oscuro.
+*/
 body:has(.theme-checkbox:checked) {
     --bg: #121212;
     --text: #e0e0e0;
@@ -28,8 +36,9 @@ body:has(.theme-checkbox:checked) {
     display: none;
 }
 
-/* --- ESTILOS BASE --- */
 * {
+    /* Box-sizing: border-box hace que el padding y border se incluyan en el ancho total del elemento.
+       Evita cálculos matemáticos molestos al diseñar layouts. */
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -43,6 +52,7 @@ body {
     background-color: var(--bg);
     color: var(--text);
     font-family: var(--font-b);
+    /* Transition suaviza el cambio de color al oscilar entre temas */
     transition: background-color 0.5s ease;
     overflow-x: hidden;
 }
@@ -50,13 +60,19 @@ body {
 /* --- ANIMACIONES DE SCROLL --- */
 .header-nav {
     position: sticky;
+    /* Se queda pegado al hacer scroll */
     top: 0;
     z-index: 1000;
     background: var(--nav-glass);
     backdrop-filter: blur(10px);
+    /* Efecto de cristal esmerilado */
+
+    /* Animation-timeline: scroll() vincula la animación al desplazamiento de la página
+       en lugar de al tiempo. */
     animation: shrink-nav linear both;
     animation-timeline: scroll();
     animation-range: 0 150px;
+    /* La animación ocurre en los primeros 150px de scroll */
 }
 
 @keyframes shrink-nav {
@@ -68,9 +84,12 @@ body {
 
 /* --- ANIMACIONES DE VISTA (Reveal) --- */
 .reveal {
+    /* View-timeline crea una línea de tiempo basada en cuándo el elemento es visible en pantalla */
     view-timeline-name: --item;
     animation: reveal-item linear both;
     animation-timeline: --item;
+    /* entry 10% entry 80%: La animación empieza cuando el 10% del elemento entra 
+       y termina cuando ha entrado el 80% */
     animation-range: entry 10% entry 80%;
 }
 
@@ -86,10 +105,11 @@ body {
     }
 }
 
-/* --- HERO SECTION --- */
 .hero {
     min-height: 100vh;
+    /* Ocupa al menos el 100% de la altura de la ventana */
     display: flex;
+    /* Flexbox para centrar contenido vertical y horizontalmente */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -99,9 +119,13 @@ body {
 
 .titulo-3d {
     font-family: var(--font-h);
+    /* clamp(): Tamaño de fuente adaptable (mínimo, preferido, máximo) */
     font-size: clamp(3rem, 10vw, 6rem);
     color: var(--accent);
+
+    /* Efecto 3D */
     perspective: 1000px;
+    /* Profundidad de campo */
     animation: float3D 5s infinite ease-in-out;
 }
 
@@ -154,6 +178,7 @@ body {
 
 .mision-vision {
     display: grid;
+    /* Grid responsive automático: crea tantas columnas como quepan de mínimo 300px */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
@@ -278,6 +303,7 @@ nav {
 /* --- GRID Y FORMULARIO --- */
 .grid-container {
     display: grid;
+    /* Patrón común para galerías responsive */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 3rem;
     padding: 4rem 2rem;
@@ -338,6 +364,7 @@ nav {
     display: none;
 }
 
+/* Media Query: Aplica estilos solo si la pantalla es menor a 768px (tablets/móviles) */
 @media (max-width: 768px) {
     .menu-icon {
         display: flex;

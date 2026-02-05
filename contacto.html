@@ -48,10 +48,17 @@
             </div>
 
             <section id="contacto" class="form-section">
+                <!-- FORM: Elemento para recoger datos del usuario. 
+                     En un proyecto real, necesitaría 'action' y 'method' para enviar los datos. -->
                 <form class="skate-form">
                     <h2>ÚNETE AL CLUB</h2>
+                    <!-- INPUT: Campos de entrada de datos.
+                         'type' define qué datos se esperan (texto, email, password, etc.).
+                         'required' impide enviar el formulario si está vacío.
+                         'placeholder' es el texto de ayuda temporal dentro del campo. -->
                     <input type="text" placeholder="Tu apodo" required>
                     <input type="email" placeholder="Email" required>
+                    <!-- BUTTON: Botón de envío. 'type=submit' envía el formulario. -->
                     <button type="submit" class="btn-anim">ENVIAR</button>
                 </form>
             </section>
